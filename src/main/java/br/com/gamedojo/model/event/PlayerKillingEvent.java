@@ -1,12 +1,16 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.event;
 
 import java.util.Date;
+
+import br.com.gamedojo.model.Agent;
+import br.com.gamedojo.model.Weapon;
 
 public class PlayerKillingEvent implements KillingEvent {
 
     private Agent killer;
     private Agent killed;
     private Date time;
+    private Weapon weapon;
 
     public PlayerKillingEvent(Agent killer, Agent killed, Date time) {
         super();
@@ -37,6 +41,14 @@ public class PlayerKillingEvent implements KillingEvent {
     @Override
     public Date getTime() {
         return time;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() {
+        return this.weapon;
     }
 
 }

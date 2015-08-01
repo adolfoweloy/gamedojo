@@ -1,16 +1,17 @@
 package br.com.gamedojo.model;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
-public class Match implements Iterable<Agent> {
+import br.com.gamedojo.model.event.KillingEvent;
+import br.com.gamedojo.model.event.PlayerKillingEvent;
+import br.com.gamedojo.model.stats.Statistics;
+
+public class Match {
 
     private String id;
     private Date startTime;
     private Date endTime;
-    private Set<Agent> agents = new HashSet<>();
+    private Statistics statistics = new Statistics();
 
     public Match(Date startTime, String id) {
         this.startTime = startTime;
@@ -33,14 +34,18 @@ public class Match implements Iterable<Agent> {
         return endTime;
     }
 
-    public void notifyKilling(KillingEvent killingEvent) {
-        agents.add(killingEvent.getKiller());
-        agents.add(killingEvent.getKilled());
+    public void addEvent(KillingEvent event) {
+
+        if (event.getKiller().saveStats()) {
+            PlayerKillingEvent playerEvent = (PlayerKillingEvent) event;
+            statistics.add(playerEvent.getKiller(), playerEvent.getWeapon());
+        }
+
+        statistics.add(event.getKilled());
     }
 
-    @Override
-    public Iterator<Agent> iterator() {
-        return agents.iterator();
+    public Statistics getStatistics() {
+        return statistics;
     }
 
 }

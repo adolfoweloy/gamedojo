@@ -18,11 +18,11 @@ public class MatchTest {
 
         Game game = new Game();
         Match match = game.newMatch(time, id);
-        match.notifyKilling(new PlayerKillingEvent(playerOne(), playerTwo(), killingTime));
+        //        match.notifyKilling(new PlayerKillingEvent(playerOne(), playerTwo(), killingTime));
 
-        match.forEach(agent -> {
-            System.out.println(agent.getName());
-        });
+        //        match.forEach(agent -> {
+        //            System.out.println(agent.getName());
+        //        });
 
         Assert.fail("nao testa testando nada isso ainda");
     }

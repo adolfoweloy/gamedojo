@@ -1,6 +1,8 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.event;
 
 import java.util.Date;
+
+import br.com.gamedojo.model.Agent;
 
 public interface KillingEvent {
 
