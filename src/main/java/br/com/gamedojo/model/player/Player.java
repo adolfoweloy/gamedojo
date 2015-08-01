@@ -1,8 +1,7 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.player;
 
-import java.util.Date;
-
-import br.com.gamedojo.model.event.PlayerKillingEvent;
+import br.com.gamedojo.model.KillWithWeapon;
+import br.com.gamedojo.model.game.Agent;
 
 import com.google.common.base.MoreObjects;
 
@@ -57,24 +56,6 @@ public class Player implements Agent {
         return killings;
     }
 
-    class PlayerKillWithWeapon implements KillWithWeapon {
-
-        private Player killer;
-        private Player killed;
-
-        public PlayerKillWithWeapon(Player killer, Player killed) {
-            this.killer = killer;
-            this.killed = killed;
-        }
-
-        @Override
-        public PlayerKillingEvent withWeaponAt(Weapon weapon, Date time) {
-            PlayerKillingEvent event = new PlayerKillingEvent(killer, killed, time);
-            event.setWeapon(weapon);
-            return event;
-        }
-
-    }
 
 
 }

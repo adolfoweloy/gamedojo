@@ -1,12 +1,12 @@
-package br.com.gamedojo.model.stats;
+package br.com.gamedojo.model.game.stats;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import br.com.gamedojo.model.Agent;
-import br.com.gamedojo.model.Player;
-import br.com.gamedojo.model.Weapon;
+import br.com.gamedojo.model.game.Agent;
+import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.player.Player;
 
 public class Statistics implements Iterable<Agent> {
 

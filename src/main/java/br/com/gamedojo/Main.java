@@ -1,10 +1,10 @@
 package br.com.gamedojo;
 
 import static br.com.gamedojo.util.DateUtil.parse;
-import br.com.gamedojo.model.Game;
-import br.com.gamedojo.model.Match;
-import br.com.gamedojo.model.Player;
-import br.com.gamedojo.model.Weapon;
+import br.com.gamedojo.model.game.Game;
+import br.com.gamedojo.model.game.Match;
+import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.player.Player;
 
 public class Main {
 

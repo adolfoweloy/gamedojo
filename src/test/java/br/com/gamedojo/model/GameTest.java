@@ -8,6 +8,8 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.gamedojo.model.game.Game;
+import br.com.gamedojo.model.game.Match;
 import br.com.gamedojo.util.DateUtil;
 
 public class GameTest {

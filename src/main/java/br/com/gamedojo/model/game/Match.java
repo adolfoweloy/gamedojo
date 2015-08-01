@@ -1,10 +1,10 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.game;
 
 import java.util.Date;
 
 import br.com.gamedojo.model.event.KillingEvent;
-import br.com.gamedojo.model.event.PlayerKillingEvent;
-import br.com.gamedojo.model.stats.Statistics;
+import br.com.gamedojo.model.game.stats.Statistics;
+import br.com.gamedojo.model.player.PlayerKillingEvent;
 
 public class Match {
 

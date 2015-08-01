@@ -1,8 +1,9 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.world;
 
 import java.util.Date;
 
 import br.com.gamedojo.model.event.KillingEvent;
+import br.com.gamedojo.model.game.Agent;
 
 public class WorldKillingEvent implements KillingEvent {
 

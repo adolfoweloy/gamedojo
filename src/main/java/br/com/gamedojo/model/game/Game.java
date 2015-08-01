@@ -1,4 +1,4 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.game;
 
 import java.util.Date;
 

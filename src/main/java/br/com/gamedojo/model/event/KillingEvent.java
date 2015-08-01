@@ -2,7 +2,7 @@ package br.com.gamedojo.model.event;
 
 import java.util.Date;
 
-import br.com.gamedojo.model.Agent;
+import br.com.gamedojo.model.game.Agent;
 
 public interface KillingEvent {
 

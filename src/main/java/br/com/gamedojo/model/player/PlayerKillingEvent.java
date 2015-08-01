@@ -1,9 +1,10 @@
-package br.com.gamedojo.model.event;
+package br.com.gamedojo.model.player;
 
 import java.util.Date;
 
-import br.com.gamedojo.model.Agent;
-import br.com.gamedojo.model.Weapon;
+import br.com.gamedojo.model.event.KillingEvent;
+import br.com.gamedojo.model.game.Agent;
+import br.com.gamedojo.model.game.Weapon;
 
 public class PlayerKillingEvent implements KillingEvent {
 

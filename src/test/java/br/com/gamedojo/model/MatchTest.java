@@ -1,38 +1,35 @@
 package br.com.gamedojo.model;
 
-import java.util.Date;
+import static br.com.gamedojo.model.game.Weapon.MAGIC;
+import static br.com.gamedojo.model.game.Weapon.SWORD;
+import static br.com.gamedojo.util.DateUtil.parse;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.gamedojo.util.DateUtil;
+import br.com.gamedojo.model.game.Game;
+import br.com.gamedojo.model.game.Match;
+import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.player.Player;
 
 public class MatchTest {
 
     @Test
-    public void shouldAddEventsForMatch() {
-
-        String id = "11348965";
-        Date time = DateUtil.parse("23/04/2013 15:34:22");
-        Date killingTime = DateUtil.parse("23/04/2013 15:35:22");
-
+    public void shouldRetrievePreferredWeapon() {
         Game game = new Game();
-        Match match = game.newMatch(time, id);
-        //        match.notifyKilling(new PlayerKillingEvent(playerOne(), playerTwo(), killingTime));
+        Match match = game.newMatch(parse("23/04/2013 15:39:22"), "123");
 
-        //        match.forEach(agent -> {
-        //            System.out.println(agent.getName());
-        //        });
+        Player skull = new Player("Skull");
+        Player janine = new Player("Janine");
+        Player kratos = new Player("Kratos");
+        Player chapolim = new Player("Chapolim");
 
-        Assert.fail("nao testa testando nada isso ainda");
-    }
+        match.addEvent(skull.kill(janine).withWeaponAt(SWORD, parse("23/04/2013 15:39:22")));
+        match.addEvent(skull.kill(kratos).withWeaponAt(SWORD, parse("23/04/2013 15:39:22")));
+        match.addEvent(skull.kill(chapolim).withWeaponAt(MAGIC, parse("23/04/2013 15:39:22")));
 
-    private Agent playerTwo() {
-        return new Player("Roman");
-    }
-
-    private Agent playerOne() {
-        return new Player("Nick");
+        Weapon preferred = match.getStatistics().getPreferredWeaponFor(skull);
+        Assert.assertEquals(Weapon.SWORD, preferred);
     }
 
 }

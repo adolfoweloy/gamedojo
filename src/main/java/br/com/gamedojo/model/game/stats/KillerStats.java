@@ -1,10 +1,10 @@
-package br.com.gamedojo.model.stats;
+package br.com.gamedojo.model.game.stats;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.gamedojo.model.Weapon;
+import br.com.gamedojo.model.game.Weapon;
 
 /**
  * Essa classe, mantém estatísticas de utilização de armas.

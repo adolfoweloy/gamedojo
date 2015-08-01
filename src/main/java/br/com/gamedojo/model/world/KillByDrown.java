@@ -1,16 +1,19 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.world;
 
 import java.util.Date;
 
+import br.com.gamedojo.model.KillWithWeapon;
 import br.com.gamedojo.model.event.KillingEvent;
-import br.com.gamedojo.model.event.PlayerKillingEvent;
+import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.player.Player;
+import br.com.gamedojo.model.player.PlayerKillingEvent;
 
-public class KillByDrown implements KillWithWeapon {
+class KillByDrown implements KillWithWeapon {
 
     private World killer;
     private Player killed;
 
-    public KillByDrown(World killer, Player killed) {
+    KillByDrown(World killer, Player killed) {
         this.killer = killer;
         this.killed = killed;
     }
