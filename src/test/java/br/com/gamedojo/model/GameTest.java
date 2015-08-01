@@ -1,25 +1,50 @@
 package br.com.gamedojo.model;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Date;
 
-import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-import br.com.gamedojo.model.Game;
-import br.com.gamedojo.model.Match;
 import br.com.gamedojo.util.DateUtil;
 
 public class GameTest {
 
-    @Test
-    public void shouldCreateANewMatch() {
-        String id = "11348965";
-        Date time = DateUtil.parse("23/04/2013 15:34:22");
+    private final String id = "11348965";
+    private final Date time = DateUtil.parse("23/04/2013 15:34:22");
 
-        Game game = new Game();
-        Match match = game.newMatch(time, id);
-        Assert.assertEquals(id, match.getId());
-        Assert.assertEquals(time, match.getStartTime());
+    private Game game;
+
+    @Before
+    public void setUp() {
+        game = new Game();
     }
 
+    @Test
+    public void shouldCreateANewMatch() {
+        Match match = game.newMatch(time, id);
+        assertNotNull(match);
+    }
+
+    @Test
+    public void shouldCreateANewMatchWithValidId() {
+        Match match = game.newMatch(time, id);
+        assertEquals(id, match.getId());
+    }
+
+    @Test
+    public void shouldCreateANewMatchWithValidStartTime() {
+        Match match = game.newMatch(time, id);
+        assertEquals(time, match.getStartTime());
+    }
+
+    @Test
+    public void shouldFinishAGameWithDateAndTime() {
+        Match match = game.newMatch(time, id);
+        match.finish(DateUtil.parse("23/04/2013 15:39:22"));
+
+        assertEquals(DateUtil.parse("23/04/2013 15:39:22"), match.getEndTime());
+    }
 }

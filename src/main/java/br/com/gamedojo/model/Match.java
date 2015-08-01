@@ -4,14 +4,29 @@ import java.util.Date;
 
 public class Match {
 
+    private String id;
+    private Date startTime;
+    private Date endTime;
+
+    public Match(Date startTime, String id) {
+        this.startTime = startTime;
+        this.id = id;
+    }
+
     public String getId() {
-        // TODO Auto-generated method stub
-        return null;
+        return id;
     }
 
     public Date getStartTime() {
-        // TODO Auto-generated method stub
-        return null;
+        return startTime;
+    }
+
+    public void finish(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
     }
 
 }
