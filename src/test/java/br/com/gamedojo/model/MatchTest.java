@@ -20,11 +20,11 @@ public class MatchTest {
         Match match = game.newMatch(parse("23/04/2013 15:39:22"), "123");
 
         Player skull = new Player("Skull");
-        Player janine = new Player("Janine");
+        Player vick = new Player("Vick a menina robo");
         Player kratos = new Player("Kratos");
         Player chapolim = new Player("Chapolim");
 
-        match.addEvent(skull.kill(janine, SWORD, parse("23/04/2013 15:39:22")));
+        match.addEvent(skull.kill(vick, SWORD, parse("23/04/2013 15:39:22")));
         match.addEvent(skull.kill(kratos, SWORD, parse("23/04/2013 15:39:22")));
         match.addEvent(skull.kill(chapolim, MAGIC, parse("23/04/2013 15:39:22")));
 
