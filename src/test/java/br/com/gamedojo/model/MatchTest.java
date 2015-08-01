@@ -24,9 +24,9 @@ public class MatchTest {
         Player kratos = new Player("Kratos");
         Player chapolim = new Player("Chapolim");
 
-        match.addEvent(skull.kill(janine).withWeaponAt(SWORD, parse("23/04/2013 15:39:22")));
-        match.addEvent(skull.kill(kratos).withWeaponAt(SWORD, parse("23/04/2013 15:39:22")));
-        match.addEvent(skull.kill(chapolim).withWeaponAt(MAGIC, parse("23/04/2013 15:39:22")));
+        match.addEvent(skull.kill(janine, SWORD, parse("23/04/2013 15:39:22")));
+        match.addEvent(skull.kill(kratos, SWORD, parse("23/04/2013 15:39:22")));
+        match.addEvent(skull.kill(chapolim, MAGIC, parse("23/04/2013 15:39:22")));
 
         Weapon preferred = match.getStatistics().getPreferredWeaponFor(skull);
         Assert.assertEquals(Weapon.SWORD, preferred);

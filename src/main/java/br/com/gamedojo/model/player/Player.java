@@ -1,7 +1,10 @@
 package br.com.gamedojo.model.player;
 
-import br.com.gamedojo.model.KillWithWeapon;
+import java.util.Date;
+
+import br.com.gamedojo.model.event.KillingEvent;
 import br.com.gamedojo.model.game.Agent;
+import br.com.gamedojo.model.game.Weapon;
 
 import com.google.common.base.MoreObjects;
 
@@ -26,11 +29,13 @@ public class Player implements Agent {
     }
 
     @Override
-    public KillWithWeapon kill(Player other) {
+    public KillingEvent kill(Player other, Weapon withWeapon, Date time) {
         killings++;
         other.deaths++;
 
-        return new PlayerKillWithWeapon(this, other);
+        PlayerKillingEvent event = new PlayerKillingEvent(this, other, time);
+        event.setWeapon(withWeapon);
+        return event;
     }
 
     @Override
@@ -54,6 +59,10 @@ public class Player implements Agent {
 
     public int getKillings() {
         return killings;
+    }
+
+    public void die() {
+        deaths++;
     }
 
 

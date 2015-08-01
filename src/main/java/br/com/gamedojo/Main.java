@@ -16,10 +16,10 @@ public class Main {
         Player nick = new Player("Nick");
         Player fury = new Player("Fury");
 
-        match.addEvent(roman.kill(nick).withWeaponAt(Weapon.M16, parse("23/04/2013 15:36:04")));
-        match.addEvent(roman.kill(fury).withWeaponAt(Weapon.M16, parse("23/04/2013 15:36:04")));
-        match.addEvent(fury.kill(nick).withWeaponAt(Weapon.M16, parse("23/04/2013 15:36:04")));
-        match.addEvent(roman.kill(nick).withWeaponAt(Weapon.M16, parse("23/04/2013 15:36:04")));
+        match.addEvent(roman.kill(nick, Weapon.M16, parse("23/04/2013 15:36:04")));
+        match.addEvent(roman.kill(fury, Weapon.M16, parse("23/04/2013 15:36:04")));
+        match.addEvent(fury.kill(nick, Weapon.M16, parse("23/04/2013 15:36:04")));
+        match.addEvent(roman.kill(nick, Weapon.M16, parse("23/04/2013 15:36:04")));
 
         match.getStatistics().forEach(agent ->  {
             Player player = (Player) agent;

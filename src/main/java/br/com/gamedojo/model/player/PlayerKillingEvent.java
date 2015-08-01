@@ -6,42 +6,12 @@ import br.com.gamedojo.model.event.KillingEvent;
 import br.com.gamedojo.model.game.Agent;
 import br.com.gamedojo.model.game.Weapon;
 
-public class PlayerKillingEvent implements KillingEvent {
+public class PlayerKillingEvent extends KillingEvent {
 
-    private Agent killer;
-    private Agent killed;
-    private Date time;
     private Weapon weapon;
 
     public PlayerKillingEvent(Agent killer, Agent killed, Date time) {
-        super();
-        this.killer = killer;
-        this.killed = killed;
-        this.time = time;
-    }
-
-    /* (non-Javadoc)
-     * @see br.com.gamedojo.model.KillingEvent#getKiller()
-     */
-    @Override
-    public Agent getKiller() {
-        return killer;
-    }
-
-    /* (non-Javadoc)
-     * @see br.com.gamedojo.model.KillingEvent#getKilled()
-     */
-    @Override
-    public Agent getKilled() {
-        return killed;
-    }
-
-    /* (non-Javadoc)
-     * @see br.com.gamedojo.model.KillingEvent#getTime()
-     */
-    @Override
-    public Date getTime() {
-        return time;
+        super(killer, killed, time);
     }
 
     public void setWeapon(Weapon weapon) {

@@ -1,6 +1,8 @@
 package br.com.gamedojo.model.game;
 
-import br.com.gamedojo.model.KillWithWeapon;
+import java.util.Date;
+
+import br.com.gamedojo.model.event.KillingEvent;
 import br.com.gamedojo.model.player.Player;
 
 public interface Agent {
@@ -9,6 +11,6 @@ public interface Agent {
 
     boolean saveStats();
 
-    KillWithWeapon kill(Player player);
+    KillingEvent kill(Player player, Weapon withWeapon, Date time);
 
 }

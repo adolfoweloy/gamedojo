@@ -1,7 +1,10 @@
 package br.com.gamedojo.model.world;
 
-import br.com.gamedojo.model.KillWithWeapon;
+import java.util.Date;
+
+import br.com.gamedojo.model.event.KillingEvent;
 import br.com.gamedojo.model.game.Agent;
+import br.com.gamedojo.model.game.Weapon;
 import br.com.gamedojo.model.player.Player;
 
 public class World implements Agent {
@@ -17,10 +20,9 @@ public class World implements Agent {
     }
 
     @Override
-    public KillWithWeapon kill(Player player) {
-
-        //        return new KillByDrown();
-        return null;
+    public KillingEvent kill(Player player, Weapon withWeapon, Date time) {
+        player.die();
+        return new WorldKillingEvent(this, player, time);
     }
 
 }
