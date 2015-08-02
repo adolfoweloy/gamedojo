@@ -12,6 +12,14 @@ public class LogProcessorTest {
 
         LineProcessor processor = getProcessor("23/04/2013 15:34:22 - New match 11348965 has started");
         assertNotNull(processor);
+
     }
 
+    @Test
+    public void shouldRetrieveLineProcessorForPlayerKillingAnotherPlayer() {
+
+        LineProcessor processor = getProcessor("23/04/2013 15:36:04 - Roman killed Nick using M16");
+        assertNotNull(processor);
+
+    }
 }
