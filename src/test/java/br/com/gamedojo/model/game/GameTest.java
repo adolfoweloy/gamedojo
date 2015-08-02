@@ -8,8 +8,6 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.gamedojo.model.game.Game;
-import br.com.gamedojo.model.game.Match;
 import br.com.gamedojo.util.DateUtil;
 
 public class GameTest {
@@ -48,5 +46,28 @@ public class GameTest {
         match.finish(DateUtil.parse("23/04/2013 15:39:22"));
 
         assertEquals(DateUtil.parse("23/04/2013 15:39:22"), match.getEndTime());
+    }
+
+    @Test
+    public void shouldCreateTwoMatches() {
+        game.newMatch(time, id);
+        game.endMatch(time);
+
+        game.newMatch(time, id);
+        game.endMatch(time);
+
+        assertEquals(2, game.matchers());
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void shouldThrowIllegalStateExceptionWhenTryingToFinishAnInexistentMatch() {
+        game.endMatch(time);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void shouldThrowExceptionWhenTryingToFinishMatchForTheSecondTime() {
+        game.newMatch(time, id);
+        game.endMatch(time);
+        game.endMatch(time);
     }
 }
