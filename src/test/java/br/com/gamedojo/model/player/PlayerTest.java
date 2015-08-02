@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.gamedojo.model.event.KillingEvent;
-import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.game.weapon.Weapons;
 import br.com.gamedojo.util.DateUtil;
 
 public class PlayerTest {
@@ -16,11 +16,11 @@ public class PlayerTest {
     @Test
     public void shouldKillTwoPlayersAndDieOnce() {
         Player hook = new Player("Hook");
-        hook.kill(new Player("Pawn"), Weapon.M16, parse(DATE_TIME));
-        hook.kill(new Player("Horse"), Weapon.M16, parse(DATE_TIME));
+        hook.kill(new Player("Pawn"), Weapons.M16.getWeapon(), parse(DATE_TIME));
+        hook.kill(new Player("Horse"), Weapons.M16.getWeapon(), parse(DATE_TIME));
 
         Player bishop = new Player("Bishop");
-        bishop.kill(hook, Weapon.M16, DateUtil.parse(DATE_TIME));
+        bishop.kill(hook, Weapons.M16.getWeapon(), DateUtil.parse(DATE_TIME));
 
         Assert.assertEquals(1, hook.getDeaths());
         Assert.assertEquals(2, hook.getKillings());
@@ -32,7 +32,7 @@ public class PlayerTest {
         Player mustache = new Player("Mustache");
 
         KillingEvent event = ladyBug.kill(mustache,
-                Weapon.MAGIC, parse(DATE_TIME));
+                Weapons.MAGIC.getWeapon(), parse(DATE_TIME));
 
         Assert.assertNotNull(event);
         Assert.assertEquals(ladyBug, event.getKiller());

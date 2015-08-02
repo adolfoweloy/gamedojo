@@ -18,7 +18,7 @@ public class LogReaderTest {
 
         try (LogReader reader = new LogReader(bufferedReader())) {
             Game game = reader.load();
-            assertEquals(1, game.matchers());
+            assertEquals(1, game.matches());
         }
 
     }

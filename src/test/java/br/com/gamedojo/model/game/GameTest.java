@@ -56,7 +56,7 @@ public class GameTest {
         game.newMatch(time, id);
         game.endMatch(time);
 
-        assertEquals(2, game.matchers());
+        assertEquals(2, game.matches());
     }
 
     @Test(expected = IllegalStateException.class)

@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import br.com.gamedojo.model.game.weapon.Weapon;
+import br.com.gamedojo.model.player.Player;
+
 public class Game implements Iterable<Match> {
     private List<Match> matches = new ArrayList<>();
     private Match currentMatch = null;
@@ -12,6 +15,10 @@ public class Game implements Iterable<Match> {
     public Match newMatch(Date time, String id) {
         currentMatch = new Match(time, id);
         return currentMatch;
+    }
+
+    public void kill(Agent a1, Player p, Weapon w, Date time) {
+        currentMatch.addEvent(a1.kill(p, w, time));
     }
 
     public void endMatch(Date time) {
@@ -24,7 +31,7 @@ public class Game implements Iterable<Match> {
         currentMatch = null;
     }
 
-    public int matchers() {
+    public int matches() {
         return matches.size();
     }
 
