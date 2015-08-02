@@ -19,10 +19,12 @@ public class LogReader implements Closeable {
         String line = null;
 
         while ((line = bufferedReader.readLine()) != null) {
-
+            Processor processor = LogProcessor.getProcessor(line);
+            // TODO - comportamento mutavel (pesquisar uma alternativa pra esse caso)
+            processor.process(game);
         }
 
-        return null;
+        return game;
     }
 
     @Override
