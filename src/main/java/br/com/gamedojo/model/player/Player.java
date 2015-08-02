@@ -31,7 +31,7 @@ public class Player implements Agent {
     @Override
     public KillingEvent kill(Player other, Weapon withWeapon, Date time) {
         killings++;
-        other.deaths++;
+        other.die();
 
         PlayerKillingEvent event = new PlayerKillingEvent(this, other, time);
         event.setWeapon(withWeapon);

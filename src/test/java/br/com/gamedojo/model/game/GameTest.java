@@ -1,4 +1,4 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.game;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -6,6 +6,12 @@ import br.com.gamedojo.model.event.KillingEvent;
 import br.com.gamedojo.model.game.stats.Statistics;
 import br.com.gamedojo.model.player.PlayerKillingEvent;
 
+/**
+ * Representa uma partida do jogo.
+ * Uma partida contem estatisticas do jogo, bem como a hora de inicio e fim da partida.
+ *
+ * @author aeloy
+ */
 public class Match {
 
     private String id;

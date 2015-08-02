@@ -1,4 +1,4 @@
-package br.com.gamedojo.model;
+package br.com.gamedojo.model.game;
 
 import static br.com.gamedojo.model.game.Weapon.MAGIC;
 import static br.com.gamedojo.model.game.Weapon.SWORD;
