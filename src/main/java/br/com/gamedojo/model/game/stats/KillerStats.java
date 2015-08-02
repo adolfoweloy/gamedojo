@@ -4,7 +4,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.game.weapon.Weapon;
+import br.com.gamedojo.model.game.weapon.Weapons;
 
 /**
  * Essa classe, mantém estatísticas de utilização de armas.
@@ -30,7 +31,7 @@ public class KillerStats {
 
     public Weapon getMostUsedWeapon() {
         int max = 0;
-        Weapon mostUsed = Weapon.INVALID;
+        Weapon mostUsed = Weapons.INVALID.getWeapon();
 
         for (Weapon key : stats.keySet()) {
             if (stats.get(key) > max) {

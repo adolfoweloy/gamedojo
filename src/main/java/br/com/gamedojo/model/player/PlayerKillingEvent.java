@@ -4,7 +4,7 @@ import java.util.Date;
 
 import br.com.gamedojo.model.event.KillingEvent;
 import br.com.gamedojo.model.game.Agent;
-import br.com.gamedojo.model.game.Weapon;
+import br.com.gamedojo.model.game.weapon.Weapon;
 
 public class PlayerKillingEvent extends KillingEvent {
 
