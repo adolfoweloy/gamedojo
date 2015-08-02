@@ -7,10 +7,11 @@ import br.com.gamedojo.parser.LineProcessor;
 
 public class InvalidProcessor extends LineProcessor {
 
+    private final Pattern invalidPattern = Pattern.compile("\\s");
+
     @Override
     public Pattern getPattern() {
-        // TODO Auto-generated method stub
-        return null;
+        return invalidPattern;
     }
 
     @Override

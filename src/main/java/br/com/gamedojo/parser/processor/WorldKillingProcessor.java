@@ -7,15 +7,15 @@ import br.com.gamedojo.parser.LineProcessor;
 
 public class WorldKillingProcessor extends LineProcessor {
 
+    private final Pattern pattern = Pattern.compile("(.*?) - <WORLD> killed (\\w+) by DROWN");
+
     @Override
     public Pattern getPattern() {
-        // TODO Auto-generated method stub
-        return null;
+        return pattern;
     }
 
     @Override
     public void process(Game game, String line) {
-        // TODO Auto-generated method stub
 
     }
 

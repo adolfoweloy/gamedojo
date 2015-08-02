@@ -11,7 +11,7 @@ import br.com.gamedojo.util.DateUtil;
 
 public class PlayerKillingProcessor extends LineProcessor {
 
-    private static final Pattern pattern = Pattern.compile("(.*?) - (\\w+) killed (\\w+) using (\\w+)");
+    private final Pattern pattern = Pattern.compile("(.*?) - (\\w+) killed (\\w+) using (\\w+)");
 
     @Override
     public Pattern getPattern() {

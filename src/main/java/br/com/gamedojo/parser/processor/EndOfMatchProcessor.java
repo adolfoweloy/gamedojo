@@ -7,10 +7,11 @@ import br.com.gamedojo.parser.LineProcessor;
 
 public class EndOfMatchProcessor extends LineProcessor {
 
+    private final Pattern pattern = Pattern.compile("(.*?) - Match (\\d+) has ended");
+
     @Override
     public Pattern getPattern() {
-        // TODO Auto-generated method stub
-        return null;
+        return pattern;
     }
 
     @Override

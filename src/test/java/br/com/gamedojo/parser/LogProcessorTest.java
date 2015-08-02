@@ -22,4 +22,21 @@ public class LogProcessorTest {
         assertNotNull(processor);
 
     }
+
+    @Test
+    public void shouldRetrieveLineProcessorForWorldKillingAnotherPlayer() {
+
+        LineProcessor processor = getProcessor("23/04/2013 15:36:33 - <WORLD> killed Nick by DROWN");
+        assertNotNull(processor);
+
+    }
+
+    @Test
+    public void shouldRetrieveLineProcessorForEndOfMatch() {
+
+        LineProcessor processor = getProcessor("23/04/2013 15:39:22 - Match 11348965 has ended ");
+        assertNotNull(processor);
+
+    }
+
 }
